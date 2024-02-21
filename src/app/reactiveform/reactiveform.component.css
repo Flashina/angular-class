@@ -1,0 +1,10 @@
+.email-div
+{
+  background-color: rgb(0, 76, 225, 0.068);
+  height:50px;
+}
+.email-div input{
+  background-color:transparent;
+  border:none; outline:none;
+  width:80%
+}

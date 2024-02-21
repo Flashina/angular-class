@@ -1,0 +1,14 @@
+<app-navbar/>
+<div class="container">
+  <div class="col-6 mx-auto shadow p-5">
+    <h3 class="text-center text-primary">SignUp page</h3>
+    <div class="alert alert-danger">{{message}}</div>
+    <input type="text" class="form-control my-2" [(ngModel)]="firstname" placeholder="Firstname">
+    <input type="text" class="form-control my-2" [(ngModel)]="lastname" placeholder="Lastname">
+    <input type="email" class="form-control my-2" [(ngModel)]="email" placeholder="email">
+    <input type="text" class="form-control my-2" [(ngModel)]="address" placeholder="Address">
+    <input type="number" class="form-control my-2" [(ngModel)]="age" placeholder="Age">
+    <input type="password" class="form-control my-2" [(ngModel)]="password" placeholder="Password">
+    <button class="btn btn-outline-info w-100 my-2" (click)="signup()">Signup</button>
+  </div>
+</div>

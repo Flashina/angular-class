@@ -1,0 +1,94 @@
+<p>reactiveform works!</p>
+<div class="container">
+  <div class="col-6 mx-auto shadow p-3">
+    <h2 class="text-center text-success my4">Reactive Form</h2>
+    <div class="row">
+      <form [formGroup]="formone">
+        <input
+          type="text"
+          class="form-control my-2"
+          placeholder="Firstname"
+          formControlName="firstname"
+          [class.is-valid]="
+            formone.get('firstname')?.valid && formone.get('firstname')?.dirty
+          "
+          [class.is-invalid]="
+            formone.get('firstname')?.invalid && formone.get('firstname')?.dirty
+          "
+        />
+        <div
+          *ngIf="
+            formone.get('firstname')?.invalid &&
+            formone.get('firstname')?.touched
+          "
+        >
+          <span
+            class="text-danger"
+            *ngIf="formone.get('firstname')?.errors?.['required']"
+          >
+            <b>This field is required</b>
+          </span>
+        </div>
+        <div class="d-flex w-100 email-div">
+          <input
+            type="text"
+            class="form-control mx-2 my-2"
+            placeholder="Email"
+            formControlName="email"
+            [class.is-valid]="
+              formone.get('email')?.valid && formone.get('email')?.dirty
+            "
+            [class.is-invalid]="
+              formone.get('email')?.invalid && formone.get('email')?.dirty
+            "
+          />
+          <div
+            class="bg-danger pt-2 text-white w-25 d-flex justify-content-center text-center"
+            style="align-items: center"
+            *ngIf="formone.get('email')?.errors?.['required'] && formone.get('email')?.dirty"
+          >
+            <p class="fw-bold">This field is required</p>
+          </div>
+          <div
+            class="bg-danger text-white w-25 d-flex justify-content-center"
+            style="align-items: center"
+            *ngIf="
+              formone.get('email')?.errors?.['email'] && formone.get('email')?.dirty
+            "
+          >
+            <span class="fw-bold">Invalid email</span>
+          </div>
+        </div>
+        <input
+          type="text"
+          class="form-control my-2"
+          placeholder="Password"
+          formControlName="password"
+          [class.is-valid]="
+            formone.get('password')?.valid && formone.get('password')?.dirty
+          "
+          [class.is-invalid]="
+            formone.get('password')?.invalid && formone.get('password')?.dirty
+          "
+        />
+        <div
+          *ngIf="
+            formone.get('password')?.invalid && formone.get('password')?.touched
+          "
+        >
+          <span
+            *ngIf="formone.get('password')?.errors?.['required']"
+            class="text-danger"
+            ><b>This field is required</b></span
+          >
+        </div>
+        <button
+          class="btn btn-outline-success w-100 my-2"
+          [disabled]="formone.invalid"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

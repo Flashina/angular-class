@@ -1,0 +1,38 @@
+<p>pipe works!</p>
+<p>{{ "agriculture" | uppercase }}</p>
+<p>{{ "HOME" | lowercase }}</p>
+<p>{{ "time" | uppercase }}</p>
+<p>{{ time | date }}</p>
+<p>{{ time | date : "short" }}</p>
+<p>{{ time | date : "long" }}</p>
+<p>{{ time | date : "medium" }}</p>
+<p>{{ time | date : "full" }}</p>
+<p>{{ time | date : "shortTime" }}</p>
+<p>{{ time | date : "longTime" }}</p>
+<p>{{ time | date : "fullTime" }}</p>
+<p>{{ time | date : "shortDate" }}</p>
+<p>{{ time | date : "longDate" }}</p>
+<p>{{ time | date : "fullDate" }}</p>
+<p>{{ time | date : "d/M/Y" }}</p>
+
+<p>{{ "currency" | uppercase }}</p>
+<p>{{ 10000 | currency }}</p>
+<p>{{ 10000 | currency : "EUR" }}</p>
+<p>{{ 10000 | currency : "CAD" }}</p>
+<p>{{ 10000 | currency : "GBP" }}</p>
+<p>{{ 10000 | currency : "GHC" }}</p>
+<p>{{ 10000 | currency : "NGN" : "symbol-narrow" }}</p>
+<p>{{ 10000 | currency : "CNY" }}</p>
+<p>{{ 10000 | currency : "YEN" : "code" }}</p>
+
+<P>{{ "Investment" | slice : 2 : 6 }}</P>
+<P>{{ "Information" | slice : 0 : 6 }}</P>
+<P>{{ "Information" | slice : 2 : 6 }}</P>
+<P>{{ "Information" | slice : 3 : 5 }}</P>
+<P>{{ "Information" | slice : 2 : 8 }}</P>
+<P>{{ "Information" | slice : 2 : 11 }}</P>
+<P>{{ "Information" | slice : 0 : 4 }}</P>
+<P>{{ "Information" | slice : 0 : 2 }}</P>
+<P>{{ "Information" | slice : 2 : 5 }}</P>
+
+<p>{{2/4|percent}}</p>

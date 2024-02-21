@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="col-6 mx-auto shadow p-4">
+    <h4 class="text-center text-success">Sing In</h4>
+    <div class="alert alert-danger">{{message}}</div>
+    <input type="email" class="form-control my-2" [(ngModel)]="email" placeholder="email">
+    <input type="password" class="form-control my-2" [(ngModel)]="password" placeholder="Password">
+    <button class="btn btn-outline-info w-100 my-2" (click)="signIn()">SignIn</button>
+  </div>
+</div>

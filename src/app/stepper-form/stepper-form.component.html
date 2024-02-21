@@ -1,0 +1,127 @@
+<!-- <p>stepper-form works!</p> -->
+<app-navbar />
+<div>
+  <div class="container">
+    <div class="row mx-auto justify-content-center">
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <form [formGroup]="formone" #okay="ngForm" *ngIf="form1">
+          <input
+            type="text"
+            class="form-control my-2"
+            placeholder="Firstname"
+            formControlName="firstname"
+            [class.is-valid]="
+              formone.get('firstname')?.valid && formone.get('firstname')?.dirty
+            "
+            [class.is-invalid]="
+              formone.get('firstname')?.invalid &&
+              formone.get('firstname')?.dirty
+            "
+          />
+          <div
+            *ngIf="
+              formone.get('firstname')?.invalid &&
+              formone.get('firstname')?.touched
+            "
+          >
+            <span
+              class="text-danger"
+              *ngIf="formone.get('firstname')?.errors?.['required']"
+            >
+              <b>This field is required</b>
+            </span>
+          </div>
+
+          <button
+            class="btn btn-dark w-100 my-2"
+            [disabled]="okay.invalid"
+            (click)="button1()"
+          >
+            Next
+          </button>
+        </form>
+
+        <!-- formTwo -->
+        <form [formGroup]="formTwo" #two="ngForm" *ngIf="form2">
+          <input
+            type="text"
+            class="form-control my-2"
+            placeholder="Email"
+            formControlName="email"
+            [class.is-valid]="
+              formTwo.get('email')?.valid && formTwo.get('email')?.dirty
+            "
+            [class.is-invalid]="
+              formTwo.get('email')?.invalid && formTwo.get('email')?.dirty
+            "
+          />
+          <div
+            *ngIf="
+              formTwo.get('email')?.invalid && formTwo.get('email')?.touched
+            "
+          >
+            <span
+              class="text-danger"
+              *ngIf="formTwo.get('email')?.errors?.['required']"
+            >
+              <b>This field is required</b>
+            </span>
+          </div>
+
+          <button
+            class="btn btn-warning w-100 my-2"
+            [disabled]="two.invalid"
+            (click)="button2()"
+          >
+            Next
+          </button>
+        </form>
+        <!-- form3 -->
+        <form [formGroup]="formthree" #woos="ngForm" *ngIf="form3">
+          <input
+            type="text"
+            class="form-control my-2"
+            minlength="8"
+            placeholder="Password"
+            formControlName="password"
+            [class.is-valid]="
+              formthree.get('password')?.valid &&
+              formthree.get('password')?.dirty
+            "
+            [class.is-invalid]="
+              formthree.get('password')?.invalid &&
+              formthree.get('password')?.dirty
+            "
+          />
+          <div
+            *ngIf="
+              formthree.get('password')?.invalid &&
+              formthree.get('password')?.touched
+            "
+          >
+            <span
+              class="text-danger"
+              *ngIf="formthree.get('password')?.errors?.['required']"
+            >
+              <b>This field is required</b>
+            </span>
+            <span
+              class="text-danger"
+              *ngIf="formthree.get('password')?.errors?.['minlength']"
+            >
+              <b>This field is required</b>
+            </span>
+          </div>
+
+          <button
+            class="btn btn-success w-100 my-2"
+            [disabled]="woos.invalid"
+            (click)="button3()"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
